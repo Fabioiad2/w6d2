@@ -28,11 +28,12 @@ function dettaglio(prodotto){
     const description = document.querySelector('#description1')
     console.log(description)
     const price = document.querySelector('#price')
+    price.classList.add('h2')
     titleProduct.textContent = prodotto.title
     imgProduct.src = prodotto.img
     imgProduct.classList.add('img-fluid')
     description.textContent = prodotto.description
-    price.textContent = prodotto.price
+    price.textContent = `€${prodotto.price.toFixed(2)}`
 }
 
 console.log(containerProduct)
@@ -48,14 +49,15 @@ prodotti.forEach((p,i)=>{
     const image = document.createElement('img')
     image.setAttribute('src',p.img)
     image.classList.add('img-fluid')
-    const description = document.querySelector('p')
+    const description = document.createElement('p')
     description.textContent = p.description
-    const price = document.querySelector('p')
+    const price = document.createElement('p')
     price.textContent = p.price
     const apriDettaglio = document.createElement('button')
     apriDettaglio.textContent = 'apri dettaglio'
     apriDettaglio.setAttribute('data-bs-target','#exampleModal')
     apriDettaglio.setAttribute('data-bs-toggle','modal')
+    apriDettaglio.classList.add('btn','btn-primary')
     apriDettaglio.addEventListener('click',(e)=>{
         prodottoSelezionato = prodotti[i]
         dettaglio(prodottoSelezionato)

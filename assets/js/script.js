@@ -22,7 +22,7 @@ const containerProduct = document.querySelector('#containerProduct')
 
 let prodottoSelezionato;
 
-function dettaglio(prodotto){
+function dettaglio({prodotto}){
     const titleProduct = document.querySelector('#exampleModalLabel')
     const imgProduct = document.querySelector('#imgProduct')
     const description = document.querySelector('#description1')
@@ -58,10 +58,9 @@ prodotti.forEach((p,i)=>{
     apriDettaglio.setAttribute('data-bs-target','#exampleModal')
     apriDettaglio.setAttribute('data-bs-toggle','modal')
     apriDettaglio.classList.add('btn','btn-primary','w-100')
+    prodottoSelezionato = prodotti[i];
     apriDettaglio.addEventListener('click',(e)=>{
-        prodottoSelezionato = prodotti[i]
         dettaglio(prodottoSelezionato)
-        return prodottoSelezionato
     })
     containerProduct.appendChild(article)
     article.appendChild(div1)

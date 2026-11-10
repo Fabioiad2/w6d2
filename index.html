@@ -30,37 +30,61 @@
 
   
 
-<nav class=" bg-primary navbar navbar-expand-lg text-white ">
-  <div class="container-fluid ">
-    <div class="col-12  col-md-6 d-flex justify-content-between">
-      <a class="navbar-brand  h1 text-white" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon text-white"></span>
-        </button>
-    </div>
-    <div class="col-12 col-md-6 collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul class="navbar-nav  ">
-        <li class="nav-item ">
-          <a class="nav-link active text-white" aria-current="page" href="#">Prodotti</a>
-        </li>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+
+    <!-- Logo a sinistra -->
+    <a class="navbar-brand fw-bold" href="#">
+      EpiShop
+    </a>
+
+    <!-- Hamburger su mobile -->
+    <button class="navbar-toggler" type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Apri menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menu a destra su desktop -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+
         <li class="nav-item">
-          <a class="nav-link text-white" href="#">Offerte</a>
+          <a class="nav-link text-white" href="#">
+            Prodotti
+          </a>
         </li>
+
         <li class="nav-item">
-          <a class="nav-link text-white" href="#">Contatti</a>
+          <a class="nav-link text-white" href="#">
+            Offerte
+          </a>
         </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#">
+            Contatti
+          </a>
+        </li>
+
       </ul>
     </div>
+
   </div>
 </nav>
+
 
 <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-     <section class="bg-light py-5">
+     <section class="bg-primary text-white py-5">
       <div class="container text-center">
         <h2 class="fs-1 fw-bold mb-3">Saldi di primavera</h2>
-        <p class="fs-5 text-muted mb-4">Scopri le offerte sui prodotti in evidenza, fino al 50% di sconto.</p>
+        <p class="fs-5  mb-4">Scopri le offerte sui prodotti in evidenza, fino al 50% di sconto.</p>
         <a href="#prodotti" class="d-inline-block bg-primary text-white text-decoration-none py-2 px-4 rounded">
           Vedi i prodotti
         </a>
@@ -68,10 +92,10 @@
     </section>
     </div>
     <div class="carousel-item">
-     <section class="bg-light py-5">
+     <section class="bg-success text-white py-5">
       <div class="container text-center">
         <h2 class="fs-1 fw-bold mb-3">Saldi di primavera 2</h2>
-        <p class="fs-5 text-muted mb-4">Scopri le offerte sui prodotti in evidenza, fino al 50% di sconto.</p>
+        <p class="fs-5  mb-4">Scopri le offerte sui prodotti in evidenza, fino al 50% di sconto.</p>
         <a href="#prodotti" class="d-inline-block bg-primary text-white text-decoration-none py-2 px-4 rounded">
           Vedi i prodotti
         </a>
@@ -79,10 +103,10 @@
     </section>
     </div>
     <div class="carousel-item">
-      <section class="bg-light py-5">
+      <section class="bg-dark text-white  py-5">
       <div class="container text-center">
         <h2 class="fs-1 fw-bold mb-3">Saldi di primavera 3</h2>
-        <p class="fs-5 text-muted mb-4">Scopri le offerte sui prodotti in evidenza, fino al 50% di sconto.</p>
+        <p class="fs-5  mb-4">Scopri le offerte sui prodotti in evidenza, fino al 50% di sconto.</p>
         <a href="#prodotti" class="d-inline-block bg-primary text-white text-decoration-none py-2 px-4 rounded">
           Vedi i prodotti
         </a>
@@ -115,7 +139,7 @@
         </aside>
 
         <section class="col-12 col-lg-9">
-          <h2 class="fs-3 fw-bold mb-4 text-center text-md-start">Prodotti in evidenza</h2>
+          <h2 class="fs-3 fw-bold mb-4 text-center text-md-start">Prodotti in evidenza <span class="badge bg-danger">-30%</span></h2>
 
           <div id="containerProduct" class="row">
           </div>

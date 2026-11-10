@@ -54,10 +54,10 @@ prodotti.forEach((p,i)=>{
     const price = document.createElement('p')
     price.textContent = p.price
     const apriDettaglio = document.createElement('button')
-    apriDettaglio.textContent = 'apri dettaglio'
+    apriDettaglio.textContent = 'Apri dettaglio'
     apriDettaglio.setAttribute('data-bs-target','#exampleModal')
     apriDettaglio.setAttribute('data-bs-toggle','modal')
-    apriDettaglio.classList.add('btn','btn-primary')
+    apriDettaglio.classList.add('btn','btn-primary','w-100')
     apriDettaglio.addEventListener('click',(e)=>{
         prodottoSelezionato = prodotti[i]
         dettaglio(prodottoSelezionato)

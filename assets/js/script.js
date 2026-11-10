@@ -22,7 +22,7 @@ const containerProduct = document.querySelector('#containerProduct')
 
 let prodottoSelezionato;
 
-function dettaglio({prodotto}){
+function dettaglio(prodotto){
     const titleProduct = document.querySelector('#exampleModalLabel')
     const imgProduct = document.querySelector('#imgProduct')
     const description = document.querySelector('#description1')

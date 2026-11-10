@@ -19,8 +19,24 @@ const prodotti = [{
 ]
 
 const containerProduct = document.querySelector('#containerProduct')
+
+let prodottoSelezionato;
+
+function dettaglio(prodotto){
+    const titleProduct = document.querySelector('#exampleModalLabel')
+    const imgProduct = document.querySelector('#imgProduct')
+    const description = document.querySelector('#description1')
+    console.log(description)
+    const price = document.querySelector('#price')
+    titleProduct.textContent = prodotto.title
+    imgProduct.src = prodotto.img
+    imgProduct.classList.add('img-fluid')
+    description.textContent = prodotto.description
+    price.textContent = prodotto.price
+}
+
 console.log(containerProduct)
-prodotti.forEach((p)=>{
+prodotti.forEach((p,i)=>{
     const article = document.createElement('article')
     article.classList.add('col-12','col-sm-6','col-xl-4','mb-3')
     const div1 = document.createElement('div')
@@ -36,10 +52,20 @@ prodotti.forEach((p)=>{
     description.textContent = p.description
     const price = document.querySelector('p')
     price.textContent = p.price
+    const apriDettaglio = document.createElement('button')
+    apriDettaglio.textContent = 'apri dettaglio'
+    apriDettaglio.setAttribute('data-bs-target','#exampleModal')
+    apriDettaglio.setAttribute('data-bs-toggle','modal')
+    apriDettaglio.addEventListener('click',(e)=>{
+        prodottoSelezionato = prodotti[i]
+        dettaglio(prodottoSelezionato)
+        return prodottoSelezionato
+    })
     containerProduct.appendChild(article)
     article.appendChild(div1)
     div1.appendChild(div2)
     div2.appendChild(image)
     div2.appendChild(titolo)
     div2.appendChild(description)
+    div2.appendChild(apriDettaglio)
 })

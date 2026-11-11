@@ -71,8 +71,10 @@ prodotti.forEach((p,i)=>{
     div2.appendChild(titolo)
     div2.appendChild(description)
     div2.appendChild(apriDettaglio)
+    
 })
 
 darkbtn.addEventListener('click', () => {
     document.body.classList.toggle('bg-dark');
+    
 });

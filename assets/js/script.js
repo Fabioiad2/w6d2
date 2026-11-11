@@ -1,5 +1,4 @@
-const darkbtn = document.querySelector('#dark')
-const body = document.querySelector('#body')
+const toggleTema = document.getElementById('toggle-tema')
 const prodotti = [{
     img:"https://placehold.co/600x400",
     description:"lorem aaaaaaaaaaa",
@@ -43,15 +42,17 @@ prodotti.forEach((p,i)=>{
     const article = document.createElement('article')
     article.classList.add('col-12','col-sm-6','col-xl-4','mb-3')
     const div1 = document.createElement('div')
-    div1.classList.add('border','rounded','p-3','bg-white','shadow-sm')
+    div1.classList.add('card', 'p-3')
     const div2 = document.createElement('div')
     div2.classList.add('mb-2','rounded')
     const titolo = document.createElement('h4')
+    titolo.classList.add('card-title')
     titolo.textContent = p.title
     const image = document.createElement('img')
     image.setAttribute('src',p.img)
     image.classList.add('img-fluid')
     const description = document.createElement('p')
+    description.classList.add('card-text')
     description.textContent = p.description
     const price = document.createElement('p')
     price.textContent = p.price
@@ -74,7 +75,7 @@ prodotti.forEach((p,i)=>{
     
 })
 
-darkbtn.addEventListener('click', () => {
-    document.body.classList.toggle('bg-dark');
-    
-});
+toggleTema.addEventListener('click', () => {
+    const temaScuro = document.body.classList.toggle('dark')
+    toggleTema.textContent = temaScuro ? 'Tema chiaro' : 'Tema scuro'
+})

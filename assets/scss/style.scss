@@ -1,6 +1,61 @@
-$bg-card: black;
+@use "variables" as v;
 
-.cartaScura{
-    background-color: $bg-card;
+@mixin tema($bg, $testo, $card-bg, $bordo, $muted) {
+  background-color: $bg;
+  color: $testo;
+
+  .card {
+    background-color: $card-bg;
+    border-color: $bordo;
+    color: $testo;
+
+    .card-text {
+      color: $muted;
+    }
+  }
+
+
+  .card-footer {
+    background-color: $card-bg;
+  }
+
+  aside .bg-light {
+    background-color: $card-bg !important;
+    border-color: $bordo !important;
+    color: $testo;
+  }
+
+  .modal-content {
+    background-color: $card-bg;
+    color: $testo;
+  }
+}
+
+body {
+  @include tema(#fafafa, #1a1a1a, #ffffff, #e0e0e0, #6c757d);
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+body.dark {
+  @include tema(#121212, #f5f5f5, #242424, #484848, #b8b8b8);
+
+  .modal-content .btn-close {
+    filter: invert(1);
+  }
+}
+
+.card {
+  border-radius: v.$radius-base;
+  box-shadow: v.$shadow-card;
+  transition: box-shadow 200ms ease, transform 200ms ease;
+
+  &:hover {
+    box-shadow: v.$shadow-card-hover;
+    transform: translateY(-3px);
+  }
+
+  .card-title {
+    font-weight: bold;
+  }
 }
 

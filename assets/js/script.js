@@ -1,3 +1,5 @@
+const darkbtn = document.querySelector('#dark')
+const body = document.querySelector('#body')
 const prodotti = [{
     img:"https://placehold.co/600x400",
     description:"lorem aaaaaaaaaaa",
@@ -70,3 +72,7 @@ prodotti.forEach((p,i)=>{
     div2.appendChild(description)
     div2.appendChild(apriDettaglio)
 })
+
+darkbtn.addEventListener('click', () => {
+    document.body.classList.toggle('bg-dark');
+});

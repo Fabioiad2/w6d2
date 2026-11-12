@@ -25,14 +25,14 @@ const prodotti = [{
 ]
 
 
-let cartPrice = prodotti.reduce((acc, p)=>{
+let cartPrice = prodotti.reduce((acc, p) => {
     return acc + p.price
-},0)
-console.log('prezzo del carrello',cartPrice)
+}, 0)
+console.log('prezzo del carrello', cartPrice)
 
 
 const categorie = [
-    'tutti','scarpe', 't-shirt', 'borse'
+    'tutti', 'scarpe', 't-shirt', 'borse'
 ]
 
 const categorieSection = document.querySelector('#categorie')
@@ -42,30 +42,30 @@ const categorieSection = document.querySelector('#categorie')
 
 
 function filtra(categoria) {
-    if (categoria == 'tutti'){
+    if (categoria == 'tutti') {
         return prodotti
     }
-    return prodotti.filter(l =>  l.categoria == categoria
-)
+    return prodotti.filter(l => l.categoria == categoria
+    )
 }
 
 
-categorie.forEach((c,i) => {
+categorie.forEach((c, i) => {
     const nomeCategoria = document.createElement('button')
     nomeCategoria.textContent = c
-    nomeCategoria.classList.add('btn-category', 'btn', 'btn-outline-success') 
+    nomeCategoria.classList.add('btn-category', 'btn', 'btn-outline-success')
     nomeCategoria.addEventListener('click', () => {
         const allButtons = document.querySelectorAll('.btn-category')
-        allButtons.forEach(b=>{
-           b.classList.remove('btn-success')
+        allButtons.forEach(b => {
+            b.classList.remove('btn-success')
             b.classList.add('btn-outline-success')
-           })
+        })
         containerProduct.textContent = ''
         console.log(`hai cliccato ${c}`)
         renderProdotti(filtra(c))
         nomeCategoria.classList.remove('btn-outline-success')
         nomeCategoria.classList.add('btn-success')
-    
+
     })
 
     categorieSection.appendChild(nomeCategoria)
@@ -97,21 +97,13 @@ function dettaglio(prodotto) {
 
 
 
-function renderProdotti(list){
+function renderProdotti(list) {
     list.forEach((p, i) => {
         const article = document.createElement('article')
         article.classList.add('col-12', 'col-sm-6', 'col-xl-4', 'mb-3')
-       
+
         const div1 = document.createElement('div')
-        if(p.categoria == 'scarpe'){
-            div1.style.borderTop = '5px solid blue'
-        }
-        else if(p.categoria == 'borse'){
-            div1.style.borderTop = '5px solid red'
-        }
-          else if(p.categoria == 't-shirt'){
-            div1.style.borderTop = '5px solid yellow'
-        }
+       
         div1.classList.add('card', 'p-3')
         const div2 = document.createElement('div')
         div2.classList.add('mb-2', 'rounded')
@@ -142,7 +134,19 @@ function renderProdotti(list){
         div2.appendChild(titolo)
         div2.appendChild(description)
         div2.appendChild(apriDettaglio)
-    
+         if (p.categoria == 'scarpe') {
+            div1.style.borderTop = '5px solid blue'
+            titolo.style.color = 'blue'
+        }
+        else if (p.categoria == 'borse') {
+            div1.style.borderTop = '5px solid red'
+            titolo.style.color = 'red'
+
+        }
+        else if (p.categoria == 't-shirt') {
+            div1.style.borderTop = '5px solid yellow'
+            titolo.style.color = 'yellow'
+        }
     })
 }
 

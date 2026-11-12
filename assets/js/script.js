@@ -28,7 +28,7 @@ const prodotti = [{
 let cartPrice = prodotti.reduce((acc, p)=>{
     return acc + p.price
 },0)
-console.log(cartPrice)
+console.log('prezzo del carrello',cartPrice)
 
 
 const categorie = [
@@ -57,14 +57,14 @@ categorie.forEach((c,i) => {
     nomeCategoria.addEventListener('click', () => {
         const allButtons = document.querySelectorAll('.btn-category')
         allButtons.forEach(b=>{
-           b.classList.remove('btn-dark')
+           b.classList.remove('btn-success')
             b.classList.add('btn-outline-success')
            })
         containerProduct.textContent = ''
         console.log(`hai cliccato ${c}`)
         renderProdotti(filtra(c))
         nomeCategoria.classList.remove('btn-outline-success')
-        nomeCategoria.classList.add('btn-dark')
+        nomeCategoria.classList.add('btn-success')
     
     })
 
@@ -101,7 +101,17 @@ function renderProdotti(list){
     list.forEach((p, i) => {
         const article = document.createElement('article')
         article.classList.add('col-12', 'col-sm-6', 'col-xl-4', 'mb-3')
+       
         const div1 = document.createElement('div')
+        if(p.categoria == 'scarpe'){
+            div1.style.borderTop = '5px solid blue'
+        }
+        else if(p.categoria == 'borse'){
+            div1.style.borderTop = '5px solid red'
+        }
+          else if(p.categoria == 't-shirt'){
+            div1.style.borderTop = '5px solid yellow'
+        }
         div1.classList.add('card', 'p-3')
         const div2 = document.createElement('div')
         div2.classList.add('mb-2', 'rounded')

@@ -54,8 +54,8 @@ categorie.forEach((c,i) => {
     const nomeCategoria = document.createElement('button')
     nomeCategoria.textContent = c
     nomeCategoria.classList.add('btn-category', 'btn', 'btn-outline-success') 
-    const allButtons = document.querySelectorAll('.btn-category')
     nomeCategoria.addEventListener('click', () => {
+        const allButtons = document.querySelectorAll('.btn-category')
         allButtons.forEach(b=>{
            b.classList.remove('btn-dark')
             b.classList.add('btn-outline-success')

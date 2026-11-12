@@ -25,7 +25,7 @@ const prodotti = [{
 ]
 
 const categorie = [
-    'scarpe', 't-shirt', 'borse'
+    'tutti','scarpe', 't-shirt', 'borse'
 ]
 
 const categorieSection = document.querySelector('#categorie')
@@ -35,19 +35,32 @@ const categorieSection = document.querySelector('#categorie')
 
 
 function filtra(categoria) {
+    if (categoria == 'tutti'){
+        return prodotti
+    }
     return prodotti.filter(l =>  l.categoria == categoria
 )
 }
 
 
-categorie.forEach((c) => {
+categorie.forEach((c,i) => {
     const nomeCategoria = document.createElement('button')
     nomeCategoria.textContent = c
+    nomeCategoria.classList.add('btn-category', 'btn', 'btn-outline-success') 
+    const allButtons = document.querySelectorAll('.btn-category')
     nomeCategoria.addEventListener('click', () => {
+        allButtons.forEach(b=>{
+           b.classList.remove('btn-dark')
+            b.classList.add('btn-outline-success')
+           })
         containerProduct.textContent = ''
         console.log(`hai cliccato ${c}`)
         renderProdotti(filtra(c))
+        nomeCategoria.classList.remove('btn-outline-success')
+        nomeCategoria.classList.add('btn-dark')
+    
     })
+
     categorieSection.appendChild(nomeCategoria)
 })
 

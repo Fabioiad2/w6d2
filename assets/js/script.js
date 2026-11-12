@@ -24,6 +24,13 @@ const prodotti = [{
 },
 ]
 
+
+let cartPrice = prodotti.reduce((acc, p)=>{
+    return acc + p.price
+},0)
+console.log(cartPrice)
+
+
 const categorie = [
     'tutti','scarpe', 't-shirt', 'borse'
 ]

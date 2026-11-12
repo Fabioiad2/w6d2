@@ -59,3 +59,35 @@ body.dark {
   }
 }
 
+@mixin tab($color){
+  border-top: 5px solid $color !important;
+}
+@mixin h4($color){
+  color:$color !important;
+}
+
+.tabTextRed{
+  @include h4(v.$red)
+}
+
+
+.tabTextYellow{
+  @include h4(v.$yellow)
+}
+
+.tabTextblue{
+  @include h4(v.$blue)
+}
+
+.tabRed{
+  @include tab(v.$red)
+}
+
+
+.taYellow{
+  @include tab(v.$yellow)
+}
+
+.taBlue{
+  @include tab(v.$blue)
+}

@@ -135,17 +135,17 @@ function renderProdotti(list) {
         div2.appendChild(description)
         div2.appendChild(apriDettaglio)
          if (p.categoria == 'scarpe') {
-            div1.style.borderTop = '5px solid blue'
-            titolo.style.color = 'blue'
+            div1.classList.add('taBlue')
+            titolo.classList.add('tabTextblue')
         }
         else if (p.categoria == 'borse') {
-            div1.style.borderTop = '5px solid red'
-            titolo.style.color = 'red'
+            div1.classList.add('tabRed')
+            titolo.classList.add('tabTextRed')
 
         }
         else if (p.categoria == 't-shirt') {
-            div1.style.borderTop = '5px solid yellow'
-            titolo.style.color = 'yellow'
+            div1.classList.add('taYellow')
+            titolo.classList.add('tabTextYellow')
         }
     })
 }
